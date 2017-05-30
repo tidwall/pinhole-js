@@ -4,8 +4,7 @@
 
 <a href="http://tidwall.com/pinhole/">Demo</a>
 
-<img src="http://i.imgur.com/EhtVA6C.jpg" width="300" height="300" alt="earth"><img src="http://i.imgur.com/fKe1N3E.jpg" width="300" height="300" alt="shapes">
-<img src="http://i.imgur.com/qQRqGPe.jpg" width="300" height="300" alt="spiral">
+<img src="http://i.imgur.com/EhtVA6C.jpg" width="300" height="300" alt="earth"><img src="http://i.imgur.com/fKe1N3E.jpg" width="300" height="300" alt="shapes"><img src="http://i.imgur.com/qQRqGPe.jpg" width="300" height="300" alt="spiral">
 
 ## Why does this exist?
 
