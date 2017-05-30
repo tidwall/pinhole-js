@@ -1,11 +1,11 @@
 # `pinhole-js`
 
-3D Wireframe Drawing Library for Javavscript. This is a port from [pinhole](https://github.com/tidwall/pinhole) for Go.
+3D Wireframe Drawing Library for Javavscript. This is a port of [pinhole](https://github.com/tidwall/pinhole) for Go.
 
 <a href="http://tidwall.com/pinhole/">Demo</a>
 
 <img src="http://i.imgur.com/EhtVA6C.jpg" width="300" height="300" alt="earth"><img src="http://i.imgur.com/fKe1N3E.jpg" width="300" height="300" alt="shapes">
-<img src="http://i.imgur.com/qQRqGPe.jpg" width="300" height="300" alt="spiral"><img src="http://i.imgur.com/FbO8tY4.jpg" width="300" height="300" alt="gopher">
+<img src="http://i.imgur.com/qQRqGPe.jpg" width="300" height="300" alt="spiral">
 
 ## Why does this exist?
 
