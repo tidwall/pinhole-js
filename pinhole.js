@@ -161,8 +161,8 @@ Pinhole = (function(){
 					this.drawLine(l.x, l.y, l.z, d.x, d.y, d.z);
 				}
 				var line = this.lines[this.lines.length-1]
-				line.nocaps = true;
-				line.circle = true;
+				line.nocaps = false;
+				//line.circle = true;
 				if (!first) {
 					first = line;
 				}
