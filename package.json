@@ -1,0 +1,24 @@
+{
+  "name": "pinhole",
+  "version": "1.0.0",
+  "description": "3D Wireframe Drawing Library for HTML Canvas",
+  "main": "pinhole.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tidwall/pinhole-js.git"
+  },
+  "keywords": [
+    "drawing",
+    "3d",
+    "wireframe"
+  ],
+  "author": "Josh Baker <joshbaker77@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tidwall/pinhole-js/issues"
+  },
+  "homepage": "https://github.com/tidwall/pinhole-js#readme"
+}
