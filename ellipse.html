@@ -1,0 +1,52 @@
+<html>
+	<script src="pinhole.js"></script>
+	<body>
+		<canvas width="1000" height="1000" style="width:500px;height:500px" id="cube"></canvas>
+	</body>
+	<script>
+		// cube and circles
+		(function(){
+			var rx = 0;
+			var ry = 0;
+			var cr1z = 0;
+			var cr2y = 0;
+			var idx = 0;
+			function step(timestamp) {
+				var p = new Pinhole()
+				// draw the cube
+				// p.drawCube(-0.3, -0.3, -0.3, 0.3, 0.3, 0.3)
+				// rotate a little on the X and Y axis.
+				p.rotate(Math.PI/3, Math.PI/6, 0)
+				// draw circle 1
+				p.begin()
+				p.drawCircle(0, 0, 0, 0.25)
+				p.rotate(0, Math.PI/2, cr1z)
+				p.colorize("blue")
+				p.end()
+				// draw ellipse 1
+				p.begin()
+				p.drawEllipse(0, 0, 0, 0.25, 0.40)
+				p.rotate(0, Math.PI/2, cr1z)
+				p.colorize("green")
+				p.end()
+				// draw circle 2
+				p.begin()
+				p.drawCircle(0, 0, 0, 0.25)
+				p.rotate(0, cr2y, Math.PI/2)
+				p.colorize("red")
+				p.end()
+				// rotate the entire scene
+				p.rotate(rx, ry, 0)
+				p.render(document.getElementById("cube"),{bgColor:'white'})
+				window.requestAnimationFrame(step);
+
+				cr1z += Math.PI*2/60; // rotate per step for the circle only
+				cr2y += Math.PI*2/60; // rotate per step for the circle only
+				rx += Math.PI*2/120; // rotate per step for the entire scene
+				ry += Math.PI*2/120; // rotate per step for the entire scene
+
+			}
+			window.requestAnimationFrame(step);
+		}())
+	</script>
+</html>
