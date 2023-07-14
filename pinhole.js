@@ -185,6 +185,39 @@ Pinhole = (function(){
 			l = d;
 		}
 	}
+	Pinhole.prototype.drawEllipse = function(x, y, z, radiusa, radiusb) {
+		var f, l;
+		var first, prev;
+		var circleSteps = this.circleSteps||45;
+		// we go one beyond the steps because we need to join at the end
+		for (var i = 0; i <= circleSteps; i++) {
+			var d = destination2(x, y, (Math.PI*2)/circleSteps*i, radiusa, radiusb);
+			d.z = z
+			if (i > 0) {
+				if (i == circleSteps) {
+					this.drawLine(l.x, l.y, l.z, f.x, f.y, f.z);
+				} else {
+					this.drawLine(l.x, l.y, l.z, d.x, d.y, d.z);
+				}
+				var line = this.lines[this.lines.length-1]
+				line.nocaps = false;
+				//line.circle = true;
+				if (!first) {
+					first = line;
+				}
+				line.cfirst = first;
+				line.cprev = prev;
+				if (prev) {
+					prev.cnext = line;
+				}
+				prev = line;
+	
+			} else {
+				f = d;
+			}
+			l = d;
+		}
+	}
 	function capsInsert(caps, x, y, z){
 		var key = x+":"+y+":"+z;
 		if (!caps[key]){
@@ -398,6 +431,12 @@ Pinhole = (function(){
 		return {
 			x: x + Math.cos(angle)*distance,
 			y: y + Math.sin(angle)*distance,
+		}
+	}
+	function destination2(x, y, angle, distancea, distanceb){
+		return {
+			x: x + Math.cos(angle)*distancea,
+			y: y + Math.sin(angle)*distanceb,
 		}
 	}
 	// https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm
